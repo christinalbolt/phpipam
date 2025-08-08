@@ -171,6 +171,7 @@ resource "aws_ecs_task_definition" "app" {
       }
     },
   ])
+
   volume {
     name = "${var.namespace}-${var.app_name}-efs-volume"
     efs_volume_configuration {
@@ -446,3 +447,4 @@ output "load_balancer_zone_id" {
   description = "Zone ID of the load balancer"
   value       = aws_lb.app.zone_id
 }
+
